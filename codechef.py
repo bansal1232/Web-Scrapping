@@ -10,13 +10,7 @@ t=soup.find('aside', class_='sidebar small-4 columns pr0')
 overall=t.find('div',attrs={'class':'rating-number'})
 print("Overall Rating = ",overall.text)
 print("\nIndividual Ratings")
-long_ch=t.findAll('td')
-cnt=0
-for ln in long_ch:
-	if cnt==1:
-		print("Long Challenge = ",ln.text)
-	elif cnt ==5:
-		print("Cook Off   \t   = ",ln.text)
-	elif cnt == 9:
-		print("Lunch Time     = ",ln.text)
-	cnt=(cnt+1)
+Ratings=t.findAll('td')
+print("Long Challenge = ",Ratings[1].text)
+print("Cook Off   \t   = ",Ratings[5].text)
+print("Lunch Time     = ",Ratings[9].text)
