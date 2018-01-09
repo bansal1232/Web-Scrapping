@@ -8,5 +8,5 @@ r=requests.get(url)
 
 soup=BeautifulSoup(r.text,'lxml')
 soup.findAll
-number=soup.findAll( 'span',class_='track-following-num')
+number=soup.findAll('span',class_='track-following-num')
 print('Hackerearth Rating =',number[1].text)
