@@ -15,9 +15,12 @@ def codechef_solutions(handle):
 
   t=soup.find('section',class_='rating-data-section problems-solved')
   link=t.findAll('a')
-  cnt = 0 
+  cnt = 0
+  take = 0
   for x in link:
-
+    take += 1
+    if take < 168:
+      continue 
     prob = x.text
     pat=re.match('/+[\w]+/',x['href'])
     contest = pat.group(0)
@@ -78,5 +81,5 @@ def codechef_solutions(handle):
 if __name__=='__main__':
   #modi_0505
   handle = 'bansal1232'
-  print(get_rating(handle))
+  #print(get_rating(handle))
   print('Total codes downloaded: ',codechef_solutions(handle))
